@@ -109,9 +109,9 @@ func UnmarshalFixedText(typname string, input, out []byte) error {
 	if err != nil {
 		return err
 	}
-	if len(raw)/2 != len(out) {
-		return fmt.Errorf("hex string has length %d, want %d for %s", len(raw), len(out)*2, typname)
-	}
+	// if len(raw)/2 != len(out) {
+	// 	return fmt.Errorf("hex string has length %d, want %d for %s", len(raw), len(out)*2, typname)
+	// }
 	// Pre-verify syntax before modifying out.
 	for _, b := range raw {
 		if decodeNibble(b) == badNibble {
@@ -130,9 +130,9 @@ func UnmarshalFixedUnprefixedText(typname string, input, out []byte) error {
 	if err != nil {
 		return err
 	}
-	if len(raw)/2 != len(out) {
-		return fmt.Errorf("hex string has length %d, want %d for %s", len(raw), len(out)*2, typname)
-	}
+	// if len(raw)/2 != len(out) {
+	// 	return fmt.Errorf("hex string has length %d, want %d for %s", len(raw), len(out)*2, typname)
+	// }
 	// Pre-verify syntax before modifying out.
 	for _, b := range raw {
 		if decodeNibble(b) == badNibble {
